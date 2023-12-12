@@ -221,7 +221,7 @@ function loader() {
     })
 }
 
-// loader()
+loader()
 
 function sg(){
     gsap.to("#sg",{
