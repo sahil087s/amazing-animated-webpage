@@ -1,3 +1,39 @@
+function loader() {
+    var tl = gsap.timeline()
+
+    tl.from("#loader h3", {
+        x: 40,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.1
+    })
+
+    tl.to("#loader h3", {
+        opacity: 0,
+        x: -40,
+        duration: 1,
+        stagger: 0.1
+    })
+
+    tl.to("#loader", {
+        opacity: 0
+    })
+
+    tl.from("#page1-content h1 span", {
+        y: 100,
+        opacity: 0,
+        stagger: 0.1,
+        duration: 0.5,
+        delay: -0.5
+    })
+
+    tl.to("#loader", {
+        display: "none"
+    })
+}
+
+loader()
+
 function locoscroll() {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -162,67 +198,6 @@ function cursorEffect2() {
 }
 cursorEffect2()
 
-function sweeper() {
-    var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 5,
-        spaceBetween: 20,
-        freeMode: true,
-        loop: true,
-        autoplay: {
-            delay: 0,
-            disableOnInteraction: true,
-        },
-        grabCursor: true,
-        speed: 10000,
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-    });
-}
-
-sweeper()
-
-function loader() {
-    var tl = gsap.timeline()
-
-    tl.from("#loader h3", {
-        x: 40,
-        opacity: 0,
-        duration: 1,
-        stagger: 0.1
-    })
-
-    tl.to("#loader h3", {
-        opacity: 0,
-        x: -40,
-        duration: 1,
-        stagger: 0.1
-    })
-
-    tl.to("#loader", {
-        opacity: 0
-    })
-
-    tl.from("#page1-content h1 span", {
-        y: 100,
-        opacity: 0,
-        stagger: 0.1,
-        duration: 0.5,
-        delay: -0.5
-    })
-
-    tl.to("#loader", {
-        display: "none"
-    })
-}
-
-loader()
-
 function sg(){
     gsap.to("#sg",{
         rotation: -90,
@@ -286,11 +261,10 @@ function sg3(){
 }
 sg3()
 
-
 const counter = document.getElementById('counter');
-    const h1 = document.querySelector('h1');
-    const h4 = document.querySelector('h4');
-    let currentValue = 5;
+const h1 = document.querySelector('h1');
+const h4 = document.querySelector('h4');
+let currentValue = 5;
 
 function updateCounter() {
     gsap.from([h1, h4], { opacity: 0, duration: 1 });
@@ -308,4 +282,29 @@ function updateCounter() {
     }});
 }
 
-    updateCounter();
+updateCounter();
+
+function sweeper() {
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 5,
+        spaceBetween: 20,
+        freeMode: true,
+        loop: true,
+        autoplay: {
+            delay: 0,
+            disableOnInteraction: true,
+        },
+        grabCursor: true,
+        speed: 10000,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+}
+
+sweeper()
